@@ -101,12 +101,11 @@ def joy_callback(data):
         # Fully release 'w'
         keyboard.release('w')
         accelerator_pressed = False
-
-    #mapping(sqaure, triangle, circle, x, steering, acceleration_pedal, break_pedal, side_movement)
-
+    mapping(sqaure, triangle, circle, x, steering, acceleration_pedal, break_pedal, side_movement, circle)
 
 
-def mapping(sqaure, triangle, circle, x, steering, acceleration_pedal, break_pedal, side_movement):
+
+def mapping(sqaure, triangle, circle, x, steering, acceleration_pedal, break_pedal, side_movement, circle2):
     prev_time = time.localtime().tm_sec
     if acceleration_pedal > -1:
         keyboard.press('w')
@@ -147,6 +146,12 @@ def mapping(sqaure, triangle, circle, x, steering, acceleration_pedal, break_ped
     if side_movement == 0:
         keyboard.release('a')
         keyboard.release('d')
+    if circle2 == 1:
+        mouse.click(Button.left, 1)
+    if x == 1:
+        keyboard.press(Key.down)
+    else:
+        keyboard.release(Key.down)
 
 
     #triangle == 1:
